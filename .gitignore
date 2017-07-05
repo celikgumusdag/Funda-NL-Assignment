@@ -1,0 +1,8 @@
+#Force to ignore check-in
+
+packages/*
+Funda-NL-Assignment/obj/*
+Funda-NL-Assignment/bin/*
+
+#Force to perform check-in
+!.nuget/NuGet.exe
