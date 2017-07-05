@@ -15,5 +15,5 @@ Scenario: Search Koop
 	Given Open koop tab
 	When  Fill textbox "#autocomplete-input" as "Amsterdam"
 	And   Click button ".search-block__body"
-	And   Click button ".search-block__submit"
+	And   Click button ".search-block__submit > button"
 	Then  Url path contains "/koop/amsterdam/"

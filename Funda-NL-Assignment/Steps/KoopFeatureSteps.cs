@@ -26,12 +26,12 @@ namespace Funda_NL_Assignment.Steps
         public void WhenClickButton(string element)
         {
             ClickElement(element);
+
         }
 
         [Then(@"Url path contains ""(.*)""")]
         public void ThenUrlPathContains(string path)
         {
-            WaitForLoad(WebDriver);
             Assert.AreEqual(Constants.Url + path, GetUrl());
         }
 

@@ -113,7 +113,7 @@ this.ScenarioSetup(scenarioInfo);
 #line 17
  testRunner.And("Click button \".search-block__body\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 18
- testRunner.And("Click button \".search-block__submit\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("Click button \".search-block__submit > button\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 19
  testRunner.Then("Url path contains \"/koop/amsterdam/\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden

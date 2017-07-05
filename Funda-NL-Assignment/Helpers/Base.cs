@@ -29,8 +29,8 @@ namespace Funda_NL_Assignment.Helpers
         protected static String read(String value)
         {
             var data = new System.Collections.Generic.Dictionary<string, string>();
-            var thisPath = Environment.CurrentDirectory;
-            foreach (var row in File.ReadAllLines(thisPath + "/Funda-NL-Assignment/Funda-NL-Assignment/Resources/css.properties"))
+            var thisPath = AppDomain.CurrentDomain.BaseDirectory;
+            foreach (var row in File.ReadAllLines(thisPath + "../../Resources/css.properties"))
                 data.Add(row.Split('=')[0], string.Join("=", row.Split('=').Skip(1).ToArray()));
             return data[value];
         }
@@ -39,11 +39,17 @@ namespace Funda_NL_Assignment.Helpers
         protected void Open()
         {
             WebDriver.Navigate().GoToUrl(Constants.Url);
+            WaitForLoad(WebDriver);
         }
 
         [AfterScenario]
         protected void Dispose()
         {
+            if (ScenarioContext.Current.TestError != null)
+            {
+                Funda_NL_Assignment.Utilities.Screenshot.TakeScreenshot(WebDriver);
+            }
+
             WebDriver.Dispose();
         }
 
@@ -62,6 +68,7 @@ namespace Funda_NL_Assignment.Helpers
         protected void ClickElement(string css)
         {
             FindElement(css).Click();
+            WaitForLoad(WebDriver);
         }
 
         protected void HighlightElement(string css)
@@ -102,6 +109,7 @@ namespace Funda_NL_Assignment.Helpers
         {
             if (timeoutInSeconds > 0)
             {
+                WaitForLoad(WebDriver);
                 WebDriverWait wait = new WebDriverWait(WebDriver, TimeSpan.FromSeconds(timeoutInSeconds));
                 wait.Until(ExpectedConditions.ElementIsVisible(By.CssSelector(element)));
             }

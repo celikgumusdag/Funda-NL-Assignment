@@ -74,6 +74,7 @@
     <Compile Include="Steps\KoopFeatureSteps.cs" />
     <Compile Include="Utilities\Constants.cs" />
     <Compile Include="Utilities\DriverFactory.cs" />
+    <Compile Include="Utilities\Screenshot.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config">
