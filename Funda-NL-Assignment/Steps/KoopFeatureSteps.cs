@@ -41,5 +41,12 @@ namespace Funda_NL_Assignment.Steps
             FindElement(element);
         }
 
+        [Then(@"Element ""(.*)"" text is ""(.*)""")]
+        public void ThenElementTextIs(string element,string text)
+        {
+            string actualText = GetText(element);
+            Assert.AreEqual(text, actualText);
+        }
+
     }
 }
