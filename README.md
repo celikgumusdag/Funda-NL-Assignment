@@ -1,5 +1,9 @@
 # Funda-NL-Assignment
 
+Description
+------------
+[Funda](http://funda.nl) Company Automation Assignment of Specflow Example Automation by using Selenium with C#
+
 Assignment
 ------------
 ![alt text](https://github.com/celikgumusdag/Funda-NL-Assignment/blob/master/img/assignment.PNG)
@@ -21,3 +25,7 @@ NuGet Packages
   <package id="SpecFlow" version="2.2.0" targetFramework="net45" />
 </packages>
 ```
+
+Help
+------------
+If you got any questions don't hesitate to contact with me: celikgumusdag@gmail.com
